@@ -1,42 +1,40 @@
 function setup() {
-  createCanvas(550, 400);
+  createCanvas(700, 500);
 }
 
 function draw() {
-  background(204,204,255);
-  fill(255,255,255);
-  beginShape(QUADS)
-  vertex(0, 0);
-  vertex(500, 0);
-  vertex(500, 500);
-  vertex(0, 400);
-  circle(150,108,130);
-  fill(255,255,153);
-  stroke(255);
-  circle(150,110,100);
-  fill(255,255,255);
-  circle(350,108,130);
-  fill(255,255,153);
-  stroke(255);
-  circle(350,90,100);
+  let z = random(255);
+  noStroke();
+  background(0);
   
-  beginShape(QUADS);
-vertex(350, 200);
-vertex(350, 300);
-vertex(150, 300);
-vertex(150, 200);
+  beginShape();
   
-  fill(255,255,255)
+  let spacing = map(mouseX, 0, width, 40, 550);
+  if(spacing  > 50){
+  fill(153, 51, 255);}
   
-vertex(340, 200);
-vertex(340, 250);
-vertex(300, 250);
-vertex(300, 200);
+  if(spacing > 75){
+    fill(255, 255, 0);}
   
-  vertex(290, 200);
-vertex(290, 250);
-vertex(230, 250);
-vertex(230, 200);
+  if(spacing > 150){
+    fill(255, 0, 0);}
+  
+  if(spacing > 225){
+    fill(255, 0, 255);}
+  
+  if(spacing > 300){
+    fill(51, 255, 51);}
+  
+  if(spacing > 375){
+    fill(102, 255, 255);}
+  
+  if(spacing > 450){
+    fill(0);}
+  
+  
+  
+  
 
-endShape();
+  ellipse(250, 250, spacing);
+    endShape(CLOSE);
 }
